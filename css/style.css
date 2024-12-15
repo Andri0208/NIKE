@@ -1,0 +1,248 @@
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+}
+
+/* Header y Navegación */
+.logo {
+    padding: 48px;
+}
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+}
+.navegacion ul {
+    display: flex;
+    list-style-type: none;
+    padding: 8px 48px;
+    margin: 48px;
+}
+.navegacion ul li {
+    margin: 0px 10px;
+}
+.navegacion ul li a {
+    text-decoration: none;
+    color: #0F1D41;
+    font-size: 20px;
+}
+#menu_toggle {
+    display: none;
+}
+.menu {
+    display: none;
+    flex-direction: column;
+}
+.menu span {
+    width: 25px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+}
+.portada {
+    width: 100%;
+    height: 500px;
+    padding: 48px;
+    display: flex;
+    background-image: url(../img/portada-main.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: flex-end;
+}
+.titulo {
+    width: 303px;
+}
+.contenido h1 {
+    color: white;
+    font-size: 48px;
+}
+.contenido p {
+    color: white;
+}
+.contenido a {
+    padding: 12px 24px;
+    background-color: white;
+    border-radius: 70px;
+    text-decoration: none;
+    color: black;
+}
+.boton {
+    margin-top: 20px;
+}
+
+/* Grid de Artículos */
+.titulo-grid {
+    padding: 48px;
+}
+.articulos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    width: 100%; 
+}
+
+/* Para pantallas más pequeñas (menores a 1200px) */
+@media only screen and (max-width: 1200px) {
+    .articulos-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Para pantallas más pequeñas (menores a 768px) */
+@media only screen and (max-width: 768px) {
+    .articulos-grid {
+        grid-template-columns: 1fr; 
+        width: 100%; 
+    }
+}
+
+.img-grid {
+    width: 100%; /* Ocupa el 100% del ancho de su contenedor */
+    height: 250px; /* Altura fija por defecto */
+    padding: 24px; /* Espaciado alrededor de la imagen */
+    display: flex;
+    background-size: cover; /* Asegura que la imagen cubra completamente el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    align-items: flex-end; /* Alinea el contenido dentro de la caja hacia el final */
+}
+
+/* Para pantallas más pequeñas (menores a 1200px) */
+@media only screen and (max-width: 1200px) {
+    .img-grid {
+        height: 200px; /* Reducir la altura en pantallas medianas */
+        padding: 16px; /* Reducir el padding */
+    }
+}
+
+/* Para pantallas más pequeñas (menores a 768px) */
+@media only screen and (max-width: 768px) {
+    .img-grid {
+        height: 180px; /* Aumentar la flexibilidad en dispositivos móviles */
+        padding: 10px; /* Reducir aún más el padding */
+    }
+}
+.img-grid a {
+    padding: 12px 24px;
+    background-color: white;
+    border-radius: 70px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Footer */
+footer {
+    margin-top: 48px;
+    padding: 20px 10px;
+    background: #EDECEC;
+    font-weight: 800;
+}
+
+/* Estilos para el formulario */
+.body-formulario {
+    background: #EDECEC;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+}
+form {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 80px;
+    box-shadow: 5px #0b0c0c;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border: none;
+    padding: 20px;
+    border-bottom: white;
+}
+input:focus[type="text"],
+input:focus[type="email"],
+input:focus[type="password"] {
+    border: none;
+    outline: none;
+}
+.button-formulario {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+}
+.button-formulario:hover {
+    background: #EDECEC;
+    color: black;
+}
+
+/* Media Query para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    /* Modificaciones del formulario */
+    .body-formulario {
+        align-items: start;
+    }
+
+    /* Estilos del menú de navegación para dispositivos pequeños */
+    .menu {
+        display: flex;
+        padding: 25px;
+        cursor: pointer;
+    }
+
+    .navegacion ul {
+        position: absolute;
+        display: flex;
+        top: 127px;
+        right: -48px;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    #menu_toggle:checked ~ .nav {
+        display: none;
+    }
+
+    .navegacion ul li {
+        margin-top: 20px;
+    }
+
+    .navegacion ul li:hover {
+        color: cyan;
+        transition: 1s;
+    }
+
+    /* Ajustes en la grilla de productos */
+    .articulos-grid {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .img-grid {
+        width: 100%;
+        margin-top: 10px;
+        background-position: center;
+    }
+}
